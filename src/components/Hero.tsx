@@ -125,7 +125,7 @@ export const Hero = () => {
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
               className="rounded-xl shadow-2xl"
-              style={{ aspectRatio: "16/9" }} // Garante proporção do vídeo
+              style={{ aspectRatio: "16/7" }} // Garante proporção do vídeo
             ></iframe>
           </div>
         </div>
