@@ -96,39 +96,52 @@ export const Hero = () => {
     }
   };
 
-  return (
-  showVideo && (
-    <div ref={videoContainerRef} className="fixed inset-0 bg-black/90 flex items-center justify-center z-50">
-      <div className="relative w-full h-full flex justify-center items-center">
-        <button
-          onClick={handleFullScreen}
-          className="absolute top-5 left-5 text-white bg-gray-800 rounded p-2 hover:bg-gray-600 transition"
-        >
-          <svg width="28" height="28" viewBox="0 0 24 24"><path d="M21 16v5h-5m0-5H8v5H3v-5h5M3 8V3h5v5H3zm18-5v5h-5V3h5z"/></svg>
-        </button>
-        <button
-          onClick={() => setShowVideo(false)}
-          className="absolute top-5 right-5 text-white bg-gray-800 rounded p-2 hover:bg-gray-600 transition"
-        >
-          <svg width="28" height="28"><path d="M6 18L18 6M6 6l12 12"/></svg>
-        </button>
-        <div className="w-full max-w-3xl aspect-video flex items-center justify-center">
-          <iframe
-            src="https://www.youtube.com/embed/0-Q4gnFE6wY"
-            title="Automatização e organização em um Só lugar!"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            className="rounded-xl shadow-2xl absolute top-0 left-0 w-full h-full"
-          />
-        </div>
-      </div>
-    </div>
-  )
-);
+  const WistiaPlayer = ({ mediaId = "8g69j4wgkk" }) => {
+  const playerRef = useRef(null);
+  const aspect = 1.7777777777777777;
+  const swatchUrl = `https://fast.wistia.com/embed/medias/${mediaId}/swatch`;
 
-export default VideoPopup;
+  useEffect(() => {
+    // scripts recomendados pelo Wistia
+    const script1 = document.createElement("script");
+    script1.src = "https://fast.wistia.com/player.js";
+    script1.async = true;
+    document.body.appendChild(script1);
+
+    const script2 = document.createElement("script");
+    script2.src = `https://fast.wistia.com/embed/${mediaId}.js`;
+    script2.async = true;
+    script2.type = "module";
+    document.body.appendChild(script2);
+
+    return () => {
+      document.body.removeChild(script1);
+      document.body.removeChild(script2);
+    };
+  }, [mediaId]);
+
+  // renderizando via dangerouslySetInnerHTML por ser um web component
+  return (
+    <div style={{ width: "100%", maxWidth: 900, margin: "0 auto" }}>
+      <style>{`
+        wistia-player[media-id='${mediaId}']:not(:defined) {
+          background: center / contain no-repeat url('${swatchUrl}');
+          display: block;
+          filter: blur(5px);
+          padding-top: ${100 / aspect}%;
+        }
+      `}</style>
+      <div 
+        ref={playerRef}
+        dangerouslySetInnerHTML={{
+          __html: `<wistia-player media-id="${mediaId}" aspect="${aspect}"></wistia-player>`
+        }}
+      />
+    </div>
+  );
+};
+
+export default WistiaPlayer;
 
 
           {/* Social Proof */}
