@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Play, X } from "lucide-react";
 import heroImage from "@/assets/hero-trainer.jpg";
+import React, { useRef } from "react";
 
 export const Hero = () => {
   const [showVideo, setShowVideo] = useState(false);
@@ -64,22 +65,57 @@ export const Hero = () => {
           </div>
 
           {/* Video Popup */}
-          {showVideo && (
-            <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-              <div className="relative w-full max-w-3xl px-4">
-                <button
-                  onClick={() => setShowVideo(false)}
-                  className="absolute -top-10 right-0 text-white hover:text-accent transition"
-                >
-                  <X className="w-8 h-8" />
-                </button>
-                <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
-                  <iframe width="1296" height="729" src="https://www.youtube.com/embed/0-Q4gnFE6wY" title="Automatização e organização em um Só lugar!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                  </iframe>
-                </div>
-              </div>
+          
+          const VideoPopup = ({ showVideo, setShowVideo }) => {
+  const videoContainerRef = useRef(null);
+
+  const handleFullscreen = () => {
+    if (videoContainerRef.current) {
+      // Acesse o elemento e peça ao navegador fullscreen
+      if (videoContainerRef.current.requestFullscreen) {
+        videoContainerRef.current.requestFullscreen();
+      }
+    }
+  };
+
+  return (
+    <>
+      {showVideo && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50" ref={videoContainerRef}>
+          <div className="relative w-full max-w-3xl px-4">
+            <button
+              onClick={() => setShowVideo(false)}
+              className="absolute -top-10 right-0 text-white hover:text-accent transition"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <button
+              onClick={handleFullscreen}
+              className="absolute -top-10 left-0 text-white hover:text-accent transition"
+              style={{marginLeft: "10px"}}
+            >
+              {/* Ícone fullscreen */}
+              <svg width="32" height="32"><path d="..."/></svg>
+            </button>
+            <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
+              <iframe
+                width="1296"
+                height="729"
+                src="https://www.youtube.com/embed/0-Q4gnFE6wY"
+                title="Automatização e organização em um Só lugar!"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </div>
-          )}
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
 
           {/* Social Proof */}
           <div className="pt-12 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-muted-foreground">
