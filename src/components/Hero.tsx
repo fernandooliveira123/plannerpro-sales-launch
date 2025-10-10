@@ -74,14 +74,8 @@ export const Hero = () => {
                   <X className="w-8 h-8" />
                 </button>
                 <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
-                  <iframe
-                    className="w-full h-full"
-                    src="https://youtu.be/0-Q4gnFE6wY"
-                    title="Demonstração do Planner Personal Pro"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+                  <iframe width="1296" height="729" src="https://www.youtube.com/embed/0-Q4gnFE6wY" title="Automatização e organização em um Só lugar!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                  </iframe>
                 </div>
               </div>
             </div>
