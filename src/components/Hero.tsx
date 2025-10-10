@@ -96,45 +96,122 @@ export const Hero = () => {
     }
   };
 
+  const YoutubeOverlayAudio = () => {
+  const [audioAtivo, setAudioAtivo] = useState(false);
+
+  // URL base do vídeo
+  const videoId = "0-Q4gnFE6wY";
+  // URL com ou sem mute
+  const getIframeUrl = () =>
+    `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=${audioAtivo ? "0" : "1"}&controls=0&modestbranding=1&rel=0&disablekb=1&fs=0`;
+
   return (
-    showVideo && (
-      <div ref={videoContainerRef} className="fixed inset-0 bg-black/90 flex items-center justify-center z-50">
-        <div className="relative w-full h-full flex justify-center items-center">
-          <button
-            onClick={handleFullScreen}
-            className="absolute top-5 left-5 text-white bg-gray-800 rounded p-2 hover:bg-gray-600 transition"
-          >
-            {/* Seu ícone de fullscreen, exemplo abaixo */}
-            <svg width="28" height="28" viewBox="0 0 24 24"><path d="M21 16v5h-5m0-5H8v5H3v-5h5M3 8V3h5v5H3zm18-5v5h-5V3h5z"/></svg>
-          </button>
-          <button
-            onClick={() => setShowVideo(false)}
-            className="absolute top-5 right-5 text-white bg-gray-800 rounded p-2 hover:bg-gray-600 transition"
-          >
-            {/* Seu ícone de fechar */}
-            <svg width="28" height="28"><path d="M6 18L18 6M6 6l12 12"/></svg>
-          </button>
-          <div className="w-full h-full flex items-center justify-center">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/0-Q4gnFE6wY"
-              title="Automatização e organização em um Só lugar!"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              className="rounded-xl shadow-2xl"
-              style={{ aspectRatio: "16/9" }} // Garante proporção do vídeo
-            ></iframe>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "6px",
+        borderRadius: "12px",
+        width: "100%",
+        maxWidth: 800,
+        margin: "auto",
+        background:
+          "linear-gradient(130deg,#00ff00,#004400,#00ff00,#006600,#00ff00,#002200)",
+        backgroundSize: "800% 800%",
+        animation: "snakeLED 6s ease-in-out infinite"
+      }}
+    >
+      <style>
+        {`
+        @keyframes snakeLED {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+        .iframe-container {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.25%;
+          background-color: #000;
+          border-radius: 8px;
+          overflow: hidden;
+        }
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+        .audio-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(255,255,255,0.9);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          z-index: 2;
+        }
+        .audio-overlay img {
+          width: 80px;
+          margin-bottom: 1rem;
+        }
+        .audio-overlay h2 {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+          color: #ff0000;
+        }
+        .audio-overlay button {
+          padding: 0.8rem 1.5rem;
+          font-size: 1rem;
+          background-color: #ff4500;
+          color: #fff;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          font-weight: bold;
+        }
+        .audio-overlay button:hover {
+          background-color: #e63c00;
+        }
+      `}
+      </style>
+
+      <div className="iframe-container" style={{ width: "100%" }}>
+        {!audioAtivo && (
+          <div className="audio-overlay">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/727/727240.png"
+              alt="Sem som"
+            />
+            <h2>Seu vídeo já começou</h2>
+            <button onClick={() => setAudioAtivo(true)}>
+              CLIQUE PARA OUVIR
+            </button>
           </div>
-        </div>
+        )}
+
+        <iframe
+          id="youtubePlayer"
+          src={getIframeUrl()}
+          title="Automatização e organização em um Só lugar!"
+          allow="autoplay; encrypted-media"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe>
       </div>
-    )
+    </div>
   );
 };
-export default VideoPopup;
 
+export default YoutubeOverlayAudio;
 
           {/* Social Proof */}
           <div className="pt-12 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-muted-foreground">
