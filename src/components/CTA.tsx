@@ -47,22 +47,30 @@ export const CTA = () => {
                 </p>
               </div>
 
+              {/* Urgency Badge */}
+              <div className="text-center">
+                <div className="inline-block bg-destructive/20 border border-destructive px-4 py-2 rounded-full animate-pulse">
+                  <p className="text-sm font-bold text-destructive">⚠️ Últimas unidades promocionais disponíveis</p>
+                </div>
+              </div>
+
               {/* Pricing */}
               <div className="text-center space-y-4">
-                <div className="inline-block">
+                <div className="inline-block p-8 bg-card/50 rounded-2xl border-2 border-accent/30">
                   <p className="text-sm text-muted-foreground line-through mb-2">
-                    De R$ 997,00 por
+                    De R$ 497,00 por
                   </p>
                   <div className="flex items-baseline justify-center gap-2">
                     <span className="text-2xl font-bold">R$</span>
-                    <span className="text-6xl md:text-7xl font-black text-accent text-glow-neon">497</span>
+                    <span className="text-6xl md:text-7xl font-black text-accent text-glow-neon">119</span>
                   </div>
                   <p className="text-xl mt-2">
-                    ou <span className="font-bold text-accent">12x de R$ 49,70</span>
+                    ou <span className="font-bold text-accent">12x de R$ 12,20</span>
                   </p>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    ✨ Oferta por tempo limitado - Acesso vitalício
-                  </p>
+                  <div className="pt-4 mt-4 border-t border-accent/20 space-y-2">
+                    <p className="text-sm font-bold text-accent">✨ Acesso vitalício sem mensalidade</p>
+                    <p className="text-xs text-muted-foreground">🔒 Pagamento 100% seguro • Acesso imediato</p>
+                  </div>
                 </div>
               </div>
 
@@ -86,15 +94,15 @@ export const CTA = () => {
               <div className="text-center pt-4">
                 <Button 
                   size="lg"
-                  className="group relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-black text-xl px-12 py-8 rounded-xl shadow-[0_0_50px_hsl(var(--neon-green)/0.4)] hover:shadow-[0_0_80px_hsl(var(--neon-green)/0.6)] transition-all duration-300 transform hover:scale-105"
+                  className="group relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-black text-xl px-12 py-8 rounded-xl shadow-[0_0_50px_hsl(var(--neon-green)/0.4)] hover:shadow-[0_0_80px_hsl(var(--neon-green)/0.6)] transition-all duration-300 transform hover:scale-105 mb-3"
                 >
                   <span className="relative z-10 flex items-center gap-3">
                     <Zap className="w-6 h-6" />
-                    QUERO AUTOMATIZAR MINHA CONSULTORIA AGORA
+                    EU QUERO MEU PLANNER PERSONAL AGORA!
                   </span>
                 </Button>
-                <p className="text-xs text-muted-foreground mt-4">
-                  🔒 Pagamento 100% seguro via cartão de crédito ou PIX
+                <p className="text-center text-xs text-muted-foreground">
+                  🔥 Últimas 15 vagas neste preço promocional
                 </p>
               </div>
             </div>
@@ -118,13 +126,15 @@ export const CTA = () => {
           </div>
 
           {/* Final Urgency Message */}
-          <div className="text-center mt-12 space-y-4">
-            <p className="text-xl md:text-2xl font-bold text-destructive animate-pulse">
-              ⚡ Vagas limitadas - Preço promocional termina em breve
-            </p>
-            <p className="text-muted-foreground">
-              Não deixe seus concorrentes saírem na frente. Automatize agora!
-            </p>
+          <div className="mt-12">
+            <div className="bg-destructive/10 border border-destructive/30 rounded-xl p-6 text-center space-y-2">
+              <p className="text-lg md:text-xl font-bold text-destructive">
+                ⚠️ Quando o lote acabar, o valor volta ao normal
+              </p>
+              <p className="text-muted-foreground">
+                ⏰ Oferta por tempo limitado. Garanta seu acesso agora pelo menor preço!
+              </p>
+            </div>
           </div>
         </div>
       </div>

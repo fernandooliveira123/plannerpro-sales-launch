@@ -6,18 +6,21 @@ const testimonials = [
     name: "Carla Dias",
     role: "Coach de Emagrecimento",
     quote: "Eu usava 3 apps, planilhas e ainda anotava coisas no papel. O Planner juntou tudo em um só lugar. Hoje meus alunos elogiam a organização e eu me sinto uma empresa de verdade.",
+    result: "Passou de 15 para 28 alunos em 4 meses",
     rating: 5
   },
   {
     name: "Rafael Mendes",
     role: "Personal Trainer Online",
     quote: "O Planner mudou tudo na minha rotina. Eu gastava horas fazendo treinos e cobrando alunos. Agora tudo flui. Tenho mais tempo, mais alunos e sou muito mais respeitado.",
+    result: "Economiza 6h por semana com automação",
     rating: 5
   },
   {
-    name: "João Silva",
-    role: "Estúdio de Personal Trainer",
-    quote: "Consegui escalar meu negócio sem perder o controle. Hoje gerencio 40 alunos com facilidade e ainda tenho tempo para estudar e me desenvolver. O Planner foi a melhor decisão que tomei.",
+    name: "Marina Costa",
+    role: "Personal Trainer em Estúdio",
+    quote: "Consegui escalar meu trabalho sem perder a qualidade. Hoje gerencio 40 alunos com facilidade e ainda tenho tempo para estudar e me desenvolver profissionalmente.",
+    result: "40 alunos organizados em um só sistema",
     rating: 5
   }
 ];
@@ -66,10 +69,26 @@ export const Testimonials = () => {
                   "{testimonial.quote}"
                 </p>
 
+                {/* Result */}
+                {testimonial.result && (
+                  <div className="bg-accent/10 border border-accent/20 rounded-lg px-4 py-2">
+                    <p className="text-sm font-bold text-accent">✨ {testimonial.result}</p>
+                  </div>
+                )}
+
                 {/* Author */}
                 <div className="pt-4 border-t border-accent/20">
-                  <p className="font-bold text-lg">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                  <div className="flex items-center gap-2">
+                    <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
+                      <span className="text-accent font-bold text-sm">
+                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-bold text-base">{testimonial.name}</p>
+                      <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Card>
