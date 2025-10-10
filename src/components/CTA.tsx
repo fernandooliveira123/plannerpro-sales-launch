@@ -94,7 +94,7 @@ export const CTA = () => {
               <div className="text-center pt-4">
                 <Button asChild>
                   <a
-                    href="https://seulink.com"
+                    href="https://planilhas-personal-trainer.pay.yampi.com.br/r/LQT6V3F973"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-black text-xl px-12 py-8 rounded-xl shadow-[0_0_50px_hsl(var(--neon-green)/0.4)] hover:shadow-[0_0_80px_hsl(var(--neon-green)/0.6)] transition-all duration-300 transform hover:scale-105 mb-3"
