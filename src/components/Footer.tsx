@@ -16,7 +16,7 @@ export const Footer = () => {
                 </h3>
               </div>
               <p className="text-sm text-muted-foreground">
-                A solução completa para personal trainers que querem automatizar 
+                A solução completa para personal trainers que querem automatizar
                 sua consultoria e multiplicar resultados.
               </p>
             </div>
@@ -49,8 +49,8 @@ export const Footer = () => {
               © {new Date().getFullYear()} PlannerPersonalTrainerPro. Todos os direitos reservados.
             </p>
             <p className="text-xs text-muted-foreground mt-2">
-              Este produto não garante a obtenção de resultados. Qualquer referência ao desempenho 
-              passado ou potencial de uma estratégia não é, e não deve ser interpretada como uma 
+              Este produto não garante a obtenção de resultados. Qualquer referência ao desempenho
+              passado ou potencial de uma estratégia não é, e não deve ser interpretada como uma
               recomendação ou garantia de qualquer resultado.
             </p>
           </div>

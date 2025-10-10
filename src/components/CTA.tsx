@@ -26,14 +26,14 @@ export const CTA = () => {
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-accent/5 to-background" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/10 rounded-full blur-[150px] animate-pulse" />
-      
+
       <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           {/* Main CTA Card */}
           <Card className="relative p-8 md:p-12 bg-gradient-to-br from-card via-card to-accent/5 border-2 border-accent shadow-[0_0_60px_hsl(var(--accent)/0.3)] animate-slide-up">
             {/* Glow Effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-accent/20 via-transparent to-brand-orange/20 rounded-lg blur-xl" />
-            
+
             <div className="relative space-y-8">
               {/* Header */}
               <div className="text-center space-y-4">
@@ -42,7 +42,7 @@ export const CTA = () => {
                   <br />sua Consultoria?
                 </h2>
                 <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                  Junte-se a mais de 500 personal trainers que já automatizaram 
+                  Junte-se a mais de 500 personal trainers que já automatizaram
                   seus processos e multiplicaram seus resultados
                 </p>
               </div>
@@ -92,15 +92,20 @@ export const CTA = () => {
 
               {/* CTA Button */}
               <div className="text-center pt-4">
-                <Button 
-                  size="lg"
-                  className="group relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-black text-xl px-12 py-8 rounded-xl shadow-[0_0_50px_hsl(var(--neon-green)/0.4)] hover:shadow-[0_0_80px_hsl(var(--neon-green)/0.6)] transition-all duration-300 transform hover:scale-105 mb-3"
-                >
-                  <span className="relative z-10 flex items-center gap-3">
-                    <Zap className="w-6 h-6" />
-                    EU QUERO MEU PLANNER PERSONAL AGORA!
-                  </span>
+                <Button asChild>
+                  <a
+                    href="https://seulink.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-black text-xl px-12 py-8 rounded-xl shadow-[0_0_50px_hsl(var(--neon-green)/0.4)] hover:shadow-[0_0_80px_hsl(var(--neon-green)/0.6)] transition-all duration-300 transform hover:scale-105 mb-3"
+                  >
+                    <span className="relative z-10 flex items-center gap-3">
+                      <Zap className="w-6 h-6" />
+                      EU QUERO MEU PLANNER PERSONAL AGORA!
+                    </span>
+                  </a>
                 </Button>
+
                 <p className="text-center text-xs text-muted-foreground">
                   🔥 Últimas 15 vagas neste preço promocional
                 </p>
@@ -111,7 +116,7 @@ export const CTA = () => {
           {/* Guarantees */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             {guarantees.map((guarantee, index) => (
-              <Card 
+              <Card
                 key={index}
                 className="p-6 bg-card/50 backdrop-blur border-accent/20 text-center space-y-3 animate-slide-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
