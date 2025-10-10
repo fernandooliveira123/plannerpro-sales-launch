@@ -78,43 +78,62 @@ export const Hero = () => {
     }
   };
 
+  const VideoPopup = ({ showVideo, setShowVideo }) => {
+  const videoContainerRef = useRef(null);
+
+  // Função para ativar o fullscreen do contêiner do vídeo
+  const handleFullScreen = () => {
+    if (videoContainerRef.current) {
+      if (videoContainerRef.current.requestFullscreen) {
+        videoContainerRef.current.requestFullscreen();
+      } else if (videoContainerRef.current.webkitRequestFullscreen) {
+        videoContainerRef.current.webkitRequestFullscreen();
+      } else if (videoContainerRef.current.mozRequestFullScreen) {
+        videoContainerRef.current.mozRequestFullScreen();
+      } else if (videoContainerRef.current.msRequestFullscreen) {
+        videoContainerRef.current.msRequestFullscreen();
+      }
+    }
+  };
+
   return (
-    <>
-      {showVideo && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50" ref={videoContainerRef}>
-          <div className="relative w-full max-w-3xl px-4">
-            <button
-              onClick={() => setShowVideo(false)}
-              className="absolute -top-10 right-0 text-white hover:text-accent transition"
-            >
-              <X className="w-8 h-8" />
-            </button>
-            <button
-              onClick={handleFullscreen}
-              className="absolute -top-10 left-0 text-white hover:text-accent transition"
-              style={{marginLeft: "10px"}}
-            >
-              {/* Ícone fullscreen */}
-              <svg width="32" height="32"><path d="..."/></svg>
-            </button>
-            <div className="aspect-video rounded-xl overflow-hidden shadow-2xl">
-              <iframe
-                width="1296"
-                height="729"
-                src="https://www.youtube.com/embed/0-Q4gnFE6wY"
-                title="Automatização e organização em um Só lugar!"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
-            </div>
+    showVideo && (
+      <div ref={videoContainerRef} className="fixed inset-0 bg-black/90 flex items-center justify-center z-50">
+        <div className="relative w-full h-full flex justify-center items-center">
+          <button
+            onClick={handleFullScreen}
+            className="absolute top-5 left-5 text-white bg-gray-800 rounded p-2 hover:bg-gray-600 transition"
+          >
+            {/* Seu ícone de fullscreen, exemplo abaixo */}
+            <svg width="28" height="28" viewBox="0 0 24 24"><path d="M21 16v5h-5m0-5H8v5H3v-5h5M3 8V3h5v5H3zm18-5v5h-5V3h5z"/></svg>
+          </button>
+          <button
+            onClick={() => setShowVideo(false)}
+            className="absolute top-5 right-5 text-white bg-gray-800 rounded p-2 hover:bg-gray-600 transition"
+          >
+            {/* Seu ícone de fechar */}
+            <svg width="28" height="28"><path d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+          <div className="w-full h-full flex items-center justify-center">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/0-Q4gnFE6wY"
+              title="Automatização e organização em um Só lugar!"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="rounded-xl shadow-2xl"
+              style={{ aspectRatio: "16/9" }} // Garante proporção do vídeo
+            ></iframe>
           </div>
         </div>
-      )}
-    </>
+      </div>
+    )
   );
 };
+export default VideoPopup;
 
 
           {/* Social Proof */}
