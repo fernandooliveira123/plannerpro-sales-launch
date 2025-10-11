@@ -140,13 +140,13 @@ export const Hero = () => {
             </p>
 
             {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6 w-full max-w-full px-4 sm:px-0">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-6 w-full px-4 sm:px-0">
           <Button
             size="lg"
             onClick={() => setShowVideo(true)}
-            className="w-full sm:w-auto group relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-base sm:text-lg px-6 sm:px-10 py-6 sm:py-7 rounded-xl shadow-[0_0_40px_hsl(var(--neon-green)/0.3)] hover:shadow-[0_0_60px_hsl(var(--neon-green)/0.5)] transition-all duration-300"
+            className="w-full sm:w-auto group relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-sm sm:text-base md:text-lg px-4 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 rounded-xl shadow-[0_0_40px_hsl(var(--neon-green)/0.3)] hover:shadow-[0_0_60px_hsl(var(--neon-green)/0.5)] transition-all duration-300"
           >
-            <Play className="mr-2 h-5 w-5" />
+            <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
             Assistir Demonstração
           </Button>
 
@@ -154,7 +154,7 @@ export const Hero = () => {
             size="lg"
             variant="outline"
             asChild
-            className="w-full sm:w-auto border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold text-base sm:text-lg px-6 sm:px-10 py-6 sm:py-7 rounded-xl transition-all duration-300"
+            className="w-full sm:w-auto border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold text-sm sm:text-base md:text-lg px-4 sm:px-8 md:px-10 py-5 sm:py-6 md:py-7 rounded-xl transition-all duration-300"
           >
             <a 
               href="https://planilhas-personal-trainer.pay.yampi.com.br/r/LQT6V3F973"
