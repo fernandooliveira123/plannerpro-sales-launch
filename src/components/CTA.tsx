@@ -101,7 +101,7 @@ export const CTA = () => {
                   >
                     <span className="relative z-10 flex items-center gap-3">
                       <Zap className="w-6 h-6" />
-                      EU QUERO MEU PLANNER PERSONAL AGORA!
+                      EU QUERO MEU PLANNER AGORA!
                     </span>
                   </a>
                 </Button>
