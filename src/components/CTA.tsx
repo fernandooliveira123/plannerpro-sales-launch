@@ -99,9 +99,9 @@ export const CTA = () => {
                     rel="noopener noreferrer"
                     className="group relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-black text-xl px-12 py-8 rounded-xl shadow-[0_0_50px_hsl(var(--neon-green)/0.4)] hover:shadow-[0_0_80px_hsl(var(--neon-green)/0.6)] transition-all duration-300 transform hover:scale-105 mb-3"
                   >
-                    <span className="relative z-10 flex items-center gap-3">
+                    <span className="relative z-10 flex items-center gap-2">
                       <Zap className="w-6 h-6" />
-                      EU QUERO MEU PLANNER AGORA!
+                      EU QUERO AGORA!
                     </span>
                   </a>
                 </Button>
