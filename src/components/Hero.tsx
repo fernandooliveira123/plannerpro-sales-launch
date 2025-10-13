@@ -129,7 +129,7 @@ export const Hero = () => {
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
-              Automatize sua consultoria fitness e{" "}
+              Automatize sua consultoria online e{" "}
               <span className="text-accent text-glow-neon">ganhe mais</span>{" "}
               com menos esforço
             </h1>
