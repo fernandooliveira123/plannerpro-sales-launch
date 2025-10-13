@@ -154,12 +154,13 @@ export const Hero = () => {
             size="lg"
             variant="outline"
             asChild
-            className="w-full sm:w-auto border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold text-xs sm:text-sm md:text-base lg:text-lg px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl transition-all duration-300"
+            className="w-full sm:w-auto border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold text-xs sm:text-sm md:text-base lg:text-lg px-4 sm:px-6 md:px-8 lg:px-10 py-5 sm:py-5 md:py-6 lg:py-7 rounded-xl transition-all duration-300 overflow-hidden"
           >
             <a 
               href="https://planilhas-personal-trainer.pay.yampi.com.br/r/LQT6V3F973"
               target="_blank"
               rel="noopener noreferrer"
+              className="block text-center whitespace-normal leading-tight"
             >
               <span className="sm:hidden">Começar Agora</span>
               <span className="hidden sm:inline">Quero Automatizar Agora</span>
