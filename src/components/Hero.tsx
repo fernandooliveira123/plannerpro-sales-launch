@@ -115,7 +115,7 @@ export const Hero = () => {
         <div className="absolute top-20 right-20 w-96 h-96 bg-accent/20 rounded-full blur-[120px] animate-pulse" />
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-brand-orange/10 rounded-full blur-[120px]" />
 
-        <div className="container relative z-10 px-3 sm:px-6 lg:px-8">
+        <div className="container relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in">
             {/* Brand Logo */}
             <div className="flex items-center justify-center gap-3 mb-6">
@@ -140,11 +140,11 @@ export const Hero = () => {
             </p>
 
             {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-6 w-full px-2 sm:px-0">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pt-6 w-full max-w-full px-4 sm:px-0">
           <Button
             size="lg"
             onClick={() => setShowVideo(true)}
-            className="w-full sm:w-auto group relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-xs sm:text-sm md:text-base lg:text-lg px-3 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl shadow-[0_0_40px_hsl(var(--neon-green)/0.3)] hover:shadow-[0_0_60px_hsl(var(--neon-green)/0.5)] transition-all duration-300"
+            className="w-full sm:w-auto group relative overflow-hidden bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-xs sm:text-sm md:text-base lg:text-lg px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl shadow-[0_0_40px_hsl(var(--neon-green)/0.3)] hover:shadow-[0_0_60px_hsl(var(--neon-green)/0.5)] transition-all duration-300"
           >
             <Play className="mr-1.5 sm:mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4 md:h-5 md:w-5" />
             Assistir Demonstração
@@ -154,14 +154,15 @@ export const Hero = () => {
             size="lg"
             variant="outline"
             asChild
-            className="w-full sm:w-auto border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold text-xs sm:text-sm md:text-base lg:text-lg px-3 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl transition-all duration-300"
+            className="w-full sm:w-auto border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground font-bold text-xs sm:text-sm md:text-base lg:text-lg px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl transition-all duration-300"
           >
             <a 
               href="https://planilhas-personal-trainer.pay.yampi.com.br/r/LQT6V3F973"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Quero Automatizar Agora
+              <span className="sm:hidden">Começar Agora</span>
+              <span className="hidden sm:inline">Quero Automatizar Agora</span>
             </a>
           </Button>
         </div>
