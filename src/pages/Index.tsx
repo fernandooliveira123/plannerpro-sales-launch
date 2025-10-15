@@ -24,8 +24,8 @@ const Index = () => {
       <Process />
       <PricingComparison />
       <Testimonials />
-      <FAQ />
       <CTA />
+      <FAQ />
       <Footer />
       <WhatsAppButton />
     </div>
